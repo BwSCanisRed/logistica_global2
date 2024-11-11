@@ -1,0 +1,40 @@
+<aside class="sidebar">
+    <div class="logo">
+        <img src="assets/Logistica1image.png" alt="Logo">
+    </div>
+    <button class="sidebar-button">Nuevo Administrador</button>
+    <button class="sidebar-button">Nuevo Vehículo</button>
+    <button class="sidebar-button">Nuevo Conductor</button>
+</aside>
+
+<header class="header">
+    <div class="admin-name">
+        {{ adminName }}
+    </div>
+</header>
+
+<main class="main-content">
+    <h1>Bienvenido!</h1>
+    <div class="pending-orders">
+        <span>{{ pedidos.length }} pedidos pendientes</span>
+    </div>
+
+    <div class="orders-assign">
+        <!-- Lista de pedidos en bodega -->
+        <div class="orders">
+            <div class="order-item" *ngFor="let pedido of pedidos">
+                <p><strong># Pedido:</strong> {{ pedido.id }} Dirección: {{ pedido.direccion }}</p>
+                <p><strong>Localidad:</strong> {{ pedido.localidad }}</p>
+            </div>
+        </div>
+
+        <!-- Lista de conductores disponibles -->
+        <div class="drivers">
+            <button class="driver-button" *ngFor="let conductor of conductores">
+                {{ conductor.nombre }}
+            </button>
+        </div>
+    </div>
+
+    <button class="assign-button">Asignar!</button>
+</main>
