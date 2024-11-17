@@ -1,10 +1,11 @@
 <aside class="sidebar">
     <div class="logo">
-        <img src="assets/Logistica1image.png" alt="Logo">
+        <img src="assets/Logo.png" alt="Logo">
     </div>
-    <button class="sidebar-button">Nuevo Administrador</button>
-    <button class="sidebar-button">Nuevo Vehículo</button>
-    <button class="sidebar-button">Nuevo Conductor</button>
+    <button class="sidebar-button" (click)="abrirModalAdmin()">Nuevo Administrador</button>
+    <button class="sidebar-button" (click)="abrirModalVehiculo()">Nuevo Vehículo</button>
+    <button class="sidebar-button" (click)="abrirModalConductor()">Nuevo Conductor</button>
+    <button class="sidebar-button" (click)="abrirModalPedido()">Nuevo Pedido</button>
 </aside>
 
 <header class="header">
@@ -28,13 +29,16 @@
             </div>
         </div>
 
-        <!-- Lista de conductores disponibles -->
+        <!-- Menú desplegable de conductores -->
         <div class="drivers">
-            <button class="driver-button" *ngFor="let conductor of conductores">
-                {{ conductor.nombre }}
-            </button>
+            <label for="selectDriver">Seleccionar Conductor:</label>
+            <select id="selectDriver" class="driver-select" [(ngModel)]="selectedDriver">
+                <option *ngFor="let conductor of conductores" [ngValue]="conductor">
+                    {{ conductor.nombre }}
+                </option>
+            </select>
         </div>
     </div>
 
-    <button class="assign-button">Asignar!</button>
+    <button class="assign-button" (click)="asignarPedido()">Asignar!</button>
 </main>

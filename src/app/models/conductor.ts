@@ -1,5 +1,5 @@
-import { Vehiculo } from './vehiculo'; // Asegúrate de que el path es correcto
-import { Pedido } from './pedido'; // Asegúrate de que el path es correcto
+import { Vehiculo } from './vehiculo'; 
+import { Pedido } from './pedido'; 
 
 export class Conductor {
   cedula: number;
@@ -7,7 +7,7 @@ export class Conductor {
   licencia: number;
   zona: string;
   correo: string;
-  contraseña: string;
+  contrasena: string;
   vehiculo: Vehiculo;
   pedidos: Pedido[];
 
@@ -17,7 +17,7 @@ export class Conductor {
     licencia: number,
     zona: string,
     correo: string,
-    contraseña: string,
+    contrasena: string,
     vehiculo: Vehiculo,
     pedidos: Pedido[] = []
   ) {
@@ -26,7 +26,7 @@ export class Conductor {
     this.licencia = licencia;
     this.zona = zona;
     this.correo = correo;
-    this.contraseña = contraseña;
+    this.contrasena = contrasena;
     this.vehiculo = vehiculo;
     this.pedidos = pedidos;
   }

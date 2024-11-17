@@ -23,8 +23,10 @@ const cliente1 = new Cliente(3001, 'Maria Lopez', 'CC', 'maria@example.com', 'pa
 const cliente2 = new Cliente(3002, 'Jose Ruiz', 'CC', 'jose@example.com', 'password6', []);
 
 // Datos de ejemplo para Pedido
-const pedido1 = new Pedido(1, 'Calle 123', 'Localidad 1', 11001, 'Bogotá', 3, 'En tránsito', new Date(), null, null, 'foto1.jpg', 'Sin novedad', cliente1, admin1, conductor1);
-const pedido2 = new Pedido(2, 'Carrera 45', 'Localidad 2', 22001, 'Medellín', 2, 'En tránsito', null, new Date(), null, 'foto2.jpg', 'Retrasado', cliente2, admin2, conductor1);
+const pedido1 = new Pedido(1, 'Cl. 1a #81d-15', 'Localidad 1', 11001, 'Bogotá', 3, 'En tránsito', new Date(), null, null, 'foto1.jpg', 'Sin novedad', cliente1, admin1, conductor1);
+const pedido2 = new Pedido(2, 'Carrera 45', 'Localidad 2', 22001, 'Medellín', 2, 'En bodega', null, new Date(), null, 'foto2.jpg', 'Retrasado', cliente2, admin2, conductor1);
+const pedido3 = new Pedido(3, 'Carrera 57', 'Localidad 3', 33001, 'Bogota', 4, 'En bodega', null, new Date(), null, 'foto3.jpg', 'Sin novedad', cliente2, admin2, conductor1);
+
 
 // Agrega los pedidos a los clientes
 cliente1.pedidos.push(pedido1);
@@ -35,4 +37,4 @@ export const CLIENTES: Cliente[] = [cliente1, cliente2];
 export const CONDUCTORES: Conductor[] = [conductor1, conductor2];
 export const ADMIN: Admin[] = [admin1, admin2]; // Cambiado a ADMINISTRADORES para mayor claridad
 export const VEHICULOS: Vehiculo[] = [vehiculo1, vehiculo2];
-export const PEDIDOS: Pedido[] = [pedido1, pedido2];
+export const PEDIDOS: Pedido[] = [pedido1, pedido2, pedido3];

@@ -6,7 +6,8 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #EAFDE6;
+    background-color: #F5F8FA;
+    color: #333;
 }
 
 .container {
@@ -14,53 +15,62 @@ body {
     grid-template-columns: 250px 1fr;
     grid-template-rows: auto 1fr;
     height: 100vh;
+    gap: 10px;
 }
 
 .sidebar {
-    background-color: #BEF202;
-    padding: 20px;
+    background-color: #2f5d5a;
+    padding: 30px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-radius: 15px 0 0 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .logo img {
-    width: 100px;
+    width: 200px;
     height: auto;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .sidebar-button {
-    background-color: #E2EAB4;
+    background-color: #d0ff00;
     border: none;
-    padding: 10px;
+    padding: 12px;
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     text-align: left;
     font-size: 16px;
     cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .sidebar-button:hover {
-    background-color: #BEF202;
+    background-color: #d0ff00;
+    transform: translateY(-2px);
 }
 
 .header {
     grid-column: 2;
     grid-row: 1;
-    background-color: #BEF202;
+    background-color: #2f5d5a;
     padding: 20px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    border-radius: 0 15px 0 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .admin-name {
-    background-color: #E2EAB4;
-    padding: 10px 20px;
-    border-radius: 10px;
+    background-color: #d0ff00;
+    padding: 12px 25px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
 }
 
 .main-content {
@@ -70,18 +80,27 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #fff;
+    border-radius: 0 15px 15px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
     margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
 }
 
 .pending-orders {
-    background-color: #E2EAB4;
-    padding: 10px 20px;
+    background-color: #d0ff00;
+    padding: 15px 25px;
     border-radius: 15px;
     margin-bottom: 30px;
     font-size: 18px;
+    color: #333;
+    font-weight: 600;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .orders-assign {
@@ -99,37 +118,46 @@ h1 {
 }
 
 .order-item {
-    background-color: #BEF202;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 10px;
+    background-color: #2f5d5a;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    color: #fff;
+    font-weight: bold;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-.driver-button {
-    background-color: #E2EAB4;
+/* Estilo para el desplegable de conductores */
+.driver-select {
     padding: 10px;
-    margin-bottom: 10px;
-    border: none;
+    font-size: 16px;
+    border: 1px solid #d0ff00;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #333;
     cursor: pointer;
-    border-radius: 10px;
-    transition: background-color 0.3s ease;
+    transition: border-color 0.3s ease;
 }
 
-.driver-button:hover {
-    background-color: #BEF202;
+.driver-select:focus {
+    border-color: #88c425;
+    outline: none;
+    box-shadow: 0 0 5px rgba(136, 196, 37, 0.5);
 }
 
 .assign-button {
     background-color: #1B676B;
     color: white;
-    padding: 10px 20px;
+    padding: 12px 25px;
     border: none;
     border-radius: 10px;
     cursor: pointer;
     font-size: 18px;
-    transition: background-color 0.3s ease;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .assign-button:hover {
     background-color: #134A4D;
+    transform: translateY(-2px);
 }

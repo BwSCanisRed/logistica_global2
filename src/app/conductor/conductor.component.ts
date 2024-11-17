@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-conductor',
   standalone: true,
-  imports: [CommonModule], // Importa CommonModule para usar directivas como *ngFor y *ngIf
+  imports: [CommonModule],
   templateUrl: './conductor.component.html',
   styleUrls: ['./conductor.component.css']
 })
@@ -19,16 +19,15 @@ export class ConductorComponent implements OnInit {
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    // Supongamos que el ID del conductor se pasa como parámetro de la ruta
     const conductorId = parseInt(this.route.snapshot.paramMap.get('conductorId')!, 10);
-    console.log('Conductor ID:', conductorId); // Verifica que el ID se está obteniendo correctamente
+    console.log('Conductor ID:', conductorId); 
     const conductor = CONDUCTORES.find(c => c.cedula === conductorId);
   
     if (conductor) {
       this.conductorName = conductor.nombre;
       this.pedidos = PEDIDOS.filter(p => p.conductor.cedula === conductorId);
-      console.log('Conductor encontrado:', conductor); // Depuración para ver los datos del conductor
-      console.log('Pedidos del conductor:', this.pedidos); // Verifica los pedidos asociados
+      console.log('Conductor encontrado:', conductor); 
+      console.log('Pedidos del conductor:', this.pedidos); 
     } else {
       console.warn('Conductor no encontrado');
     }
@@ -42,4 +41,10 @@ export class ConductorComponent implements OnInit {
   reportarNovedad(pedido: Pedido): void {
     console.log(`Novedad reportada para el pedido #${pedido.id}`);
   }
+
+  abrirGoogleMaps(direccion: string): void {
+  const url = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(direccion)}`;
+  window.open(url, '_blank');
+}
+
 }

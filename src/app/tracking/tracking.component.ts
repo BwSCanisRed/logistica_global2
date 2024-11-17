@@ -1,9 +1,8 @@
-// src/app/tracking/tracking.component.ts
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Pedido } from '../models/pedido';
 import { CommonModule } from '@angular/common';
-import { PEDIDOS } from '../data/data'; // Importa los pedidos directamente
+import { PEDIDOS } from '../data/data';
 
 @Component({
   selector: 'app-tracking',
@@ -32,5 +31,21 @@ export class TrackingComponent implements OnInit {
     if (!this.pedido) {
       alert('Pedido no encontrado');
     }
+  }
+
+    get pedidoEnBodega(): boolean {
+    return this.pedido?.estado === 'En bodega';
+  }
+
+  get pedidoCreado(): boolean {
+    return !!this.pedido?.fechaBodega;
+  }
+
+  get pedidoEnTransito(): boolean {
+    return !!this.pedido?.fechaTransito;
+  }
+
+  get pedidoEntregado(): boolean {
+    return !!this.pedido?.fechaEntregado;
   }
 }

@@ -21,8 +21,8 @@ export class HomeComponent implements OnInit {
 
   // Función para autenticarse y redirigir según el rol
   login(): void {
-    const conductor = CONDUCTORES.find(c => c.correo === this.email && c.contraseña === this.password);
-    const admin = ADMIN.find(a => a.correo === this.email && a.contraseña === this.password);
+    const conductor = CONDUCTORES.find(c => c.correo === this.email && c.contrasena === this.password);
+    const admin = ADMIN.find(a => a.correo === this.email && a.contrasena === this.password);
   
     if (conductor) {
       // Redirigir a la página del conductor con su ID
